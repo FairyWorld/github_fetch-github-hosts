@@ -28,7 +28,7 @@ jobs:
         run: go mod tidy
 
       - name: Install fyne
-        run: go install fyne.io/fyne/v2/cmd/fyne
+        run: go get fyne.io/fyne/v2/cmd/fyne
 
       - name: Package for MacOS
         run: fyne package --release -os darwin
