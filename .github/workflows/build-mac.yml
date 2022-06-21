@@ -22,11 +22,14 @@ jobs:
         with:
           go-version: 1.17.4
 
+      - name: Go tidy
+        run: go mod tidy
+
       - name: Install fyne
         run: go install fyne.io/fyne/v2/cmd/fyne
 
       - name: Package for MacOS
-        run:  go mod tidy && fyne package --release -os darwin
+        run: fyne package --release -os darwin
 
       - name: Compress
         uses: a7ul/tar-action@v1.1.0
